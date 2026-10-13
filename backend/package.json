@@ -1,0 +1,25 @@
+{
+  "name": "cinesound-backend",
+  "version": "1.0.0",
+  "description": "API do CineSound: recomendações musicais a partir de filmes",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.1",
+    "vitest": "^4.1.11"
+  }
+}
