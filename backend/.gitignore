@@ -3,3 +3,8 @@
 !.env.example
 node_modules/
 coverage/
+
+# Local authentication request samples
+/teste-cadastro.json
+/teste-login.json
+/teste-senha-invalida.json

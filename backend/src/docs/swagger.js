@@ -1,22 +1,23 @@
-
 import swaggerJsdoc from 'swagger-jsdoc';
-
 
 const options = {
   definition: {
     openapi: '3.0.3',
+
     info: {
       title: 'CineSound API',
       version: '1.0.0',
       description:
         'API para pesquisa de filmes e geração de perfis musicais inspirados em filmes.',
     },
+
     servers: [
       {
         url: 'http://localhost:3000',
         description: 'Servidor local de desenvolvimento',
       },
     ],
+
     tags: [
       {
         name: 'Health',
@@ -30,11 +31,26 @@ const options = {
         name: 'Recommendations',
         description: 'Geração de perfis musicais baseados em filmes',
       },
+      {
+        name: 'Authentication',
+        description: 'Cadastro, login e autenticação de usuários',
+      },
     ],
+
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+          description:
+            'Informe o token JWT obtido no login. Não inclua a palavra Bearer no campo.',
+        },
+      },
+    },
   },
-  apis: [
-    './src/routes/*.js',
-  ],
+
+  apis: ['./src/routes/*.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
